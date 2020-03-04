@@ -1,6 +1,6 @@
 class Question
-  attr_reader :answer, :number_one, :number_two
-  attr_writer :generate_question
+  attr_reader :correct_answer, :number_one, :number_two
+  attr_accessor :generate_question
 
   def initialize()
     numbers
@@ -15,17 +15,11 @@ class Question
 
   def answer
     # generate answer
-    @addition = @number_one + @number_two
+    @correct_answer = @number_one + @number_two
   end
 
   def generate_question(player_id)
     # generate string of question
     puts "Player #{player_id}: What does #{self.number_one} plus #{self.number_two} equal?"
   end
-
-  def is_correct_answer(user_input)
-    @addition === user_input
-  end
 end
-
-question1 = Question.new()
