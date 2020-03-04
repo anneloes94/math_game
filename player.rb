@@ -10,5 +10,3 @@ class Player
     @number_of_lives_left = n
   end
 end
-
-player1 = Player.new(1, 3)

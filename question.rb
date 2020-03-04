@@ -1,5 +1,11 @@
 class Question
   attr_reader :answer, :number_one, :number_two
+  attr_writer :generate_question
+
+  def initialize()
+    numbers
+    answer
+  end
 
   def numbers
     # randomize two numbers
@@ -9,15 +15,17 @@ class Question
 
   def answer
     # generate answer
-    @addition = self.number_one + self.number_two
+    @addition = @number_one + @number_two
   end
 
-  def generate_question(self.number_one, self.number_two, Player.id)
+  def generate_question(player_id)
     # generate string of question
-    puts `Player #{Player.id}: What does #{self.number_one} plus #{self.number_two} equal?`
+    puts "Player #{player_id}: What does #{self.number_one} plus #{self.number_two} equal?"
   end
 
   def is_correct_answer(user_input)
-    self.addition === user_input
+    @addition === user_input
   end
 end
+
+question1 = Question.new()

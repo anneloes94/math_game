@@ -1,4 +1,7 @@
-while Player(1).number_of_lives_left != 0 || Player(1).number_of_lives_left != 0 |do|
+player1 = Player.new(1)
+player2 = Player.new(2)
+
+while player1.number_of_lives_left != 0 || player2.number_of_lives_left != 0 |do|
   Question.generate_question()
   if Question.is_correct_answer(gets.chomp)
     puts `Player YES! You are correct`
